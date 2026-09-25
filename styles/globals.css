@@ -1,0 +1,303 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* scroll-padding-top queda fuera del media query: es compensación de
+     * layout por el navbar, no una animación. */
+    scroll-padding-top: 80px;
+  }
+
+  /* El scroll suave solo para quien no pidió menos movimiento. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* El body es el lienzo real: se ve en el rebote de overscroll de iOS y
+     macOS. Estaba en bg-geo-dark con text-white, del tema oscuro viejo. */
+  body {
+    @apply bg-geo-paper text-geo-forest;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::selection {
+    @apply bg-geo-emerald/25 text-geo-forest-deep;
+  }
+
+  /* ====== SCROLLBAR ======
+     Estos son selectores de elemento, así que NO se purgan: llegaban a
+     producción tal cual. Era un riel casi negro con pulgar verde neón sobre
+     un sitio de papel, en todo Chrome, Edge y Safari de escritorio. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-geo-paper-warm;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-geo-forest/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-geo-forest/50;
+  }
+
+  /* Firefox */
+  html {
+    scrollbar-color: rgba(28, 51, 40, 0.3) #eeebdf;
+  }
+}
+
+@layer utilities {
+  /* ====== TOPOGRAFÍA VIVA (O2) ======
+     Scoped utilities for the Topografía Viva homepage redesign.
+     Everything under `.o2-root` switches to the paper/forest palette
+     and serif display typography. */
+  .o2-root {
+    background: #e6e4d8;
+    color: #1c3328;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'kern';
+  }
+  /* Force form controls to inherit DM Sans so the homepage stays on a
+     single coherent type system (display = Familjen Grotesk via
+     .o2-display, mono = JetBrains Mono via .o2-mono, body = DM Sans). */
+  .o2-root input,
+  .o2-root textarea,
+  .o2-root select,
+  .o2-root button {
+    font-family: inherit;
+  }
+
+  /* Kill Chrome/Edge's cream-yellow autofill background — it overrides any
+     CSS background-color and would make our dark-on-forest inputs look like
+     pale-cream pills with invisible text. Paint forest behind, paper-warm
+     text on top, scoped to .o2-root so it doesn't bleed elsewhere. */
+  .o2-root input:-webkit-autofill,
+  .o2-root input:-webkit-autofill:hover,
+  .o2-root input:-webkit-autofill:focus,
+  .o2-root input:-webkit-autofill:active {
+    -webkit-text-fill-color: #eeebdf;
+    -webkit-box-shadow: 0 0 0 1000px #1c3328 inset;
+    box-shadow: 0 0 0 1000px #1c3328 inset;
+    caret-color: #2eb479;
+    transition: background-color 9999s ease-in-out 0s;
+  }
+  .o2-root ::selection {
+    background: rgba(31, 138, 91, 0.25);
+    color: #0d1f15;
+  }
+  .o2-display {
+    font-family: 'Familjen Grotesk', 'DM Sans', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  /* ─── Canonical O2 typography scale ─────────────────────────────────
+     6 sizes cover every headline from the 140px home hero down to
+     small card titles. Sized with clamp() so they scale fluidly with
+     viewport width. Pair with .o2-display for the Familjen Grotesk
+     font-family (the size classes set size+leading+tracking only). */
+  .o2-h1 { font-size: clamp(40px, 8.4vw, 112px); line-height: 0.96; letter-spacing: -0.03em; }
+  .o2-h2 { font-size: clamp(33px, 6vw, 82px);    line-height: 0.99; letter-spacing: -0.025em; }
+  .o2-h3 { font-size: clamp(27px, 4.3vw, 58px);  line-height: 1.04; letter-spacing: -0.02em; }
+  .o2-h4 { font-size: clamp(23px, 2.8vw, 40px);  line-height: 1.1;  letter-spacing: -0.018em; }
+  .o2-h5 { font-size: clamp(19px, 2.1vw, 28px);  line-height: 1.15; letter-spacing: -0.015em; }
+  .o2-h6 { font-size: clamp(16px, 1.5vw, 22px);  line-height: 1.22; letter-spacing: -0.01em; }
+  .o2-lede {
+    font-size: clamp(16px, 1.35vw, 19px);
+    line-height: 1.55;
+  }
+  /* Eyebrow y kicker: geometría, SIN color.
+   *
+   * El color va en cada sitio con un token, porque no puede ser el mismo sobre
+   * papel que sobre forest — ahí `emerald` no llega a contraste y hay que usar
+   * `emerald-light`. Eso no es deriva del sistema: es el contraste mandando.
+   *
+   * Antes estas clases fijaban `color: #157049` y no las usaba nadie, mientras
+   * 16 sitios las reimplementaban a mano con valores arbitrarios de Tailwind. */
+  .o2-eyebrow {
+    font-size: 13px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .o2-kicker {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  /* Canonical vertical rhythm — pick one of three sizes per section. */
+  .o2-section       { padding-top: 5.5rem; padding-bottom: 6.5rem; }
+  .o2-section-tight { padding-top: 3.25rem; padding-bottom: 5rem; }
+  .o2-section-snug  { padding-top: 2rem; padding-bottom: 5rem; }
+
+  /* Reduce motion — kill animations for users who ask for it. */
+  @media (prefers-reduced-motion: reduce) {
+    .o2-root * {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  /* Foco de teclado visible, en cualquiera de las dos paletas.
+   *
+   * Anillo bitono anidado: el interno es papel y el externo es forest, así que
+   * sobre fondo claro se ve el externo (10.59:1) y sobre las secciones oscuras
+   * se ve el interno (11.32:1). Un solo color no sirve: el #2eb479 que había
+   * antes daba 2.08:1 sobre paper, y el #157049 que parece la corrección obvia
+   * se cae a 2.22:1 sobre forest. WCAG 2.2 SC 2.4.11 y 1.4.11 piden 3:1.
+   *
+   * Sin border-radius: se aplicaba al elemento, no al anillo, y convertía en
+   * píldora las tarjetas con fondo y overflow-hidden al enfocarlas. */
+  .o2-root a:focus-visible,
+  .o2-root button:focus-visible,
+  .o2-root input:focus-visible,
+  .o2-root textarea:focus-visible {
+    outline: 2px solid #eeebdf;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px #1c3328;
+  }
+
+
+  /* Enlace que estira su área clicable a toda la tarjeta contenedora.
+   *
+   * Sirve para que una tarjeta sea UNA sola parada de tabulación en vez de dos
+   * o tres al mismo destino. El contenedor necesita `position: relative`.
+   *
+   * Va acá y no como `after:content-['']` en el JSX porque eso es un valor
+   * arbitrario de Tailwind, y la regla de la casa los prohíbe.
+   *
+   * Ojo: cualquier enlace o botón que deba seguir siendo clicable DENTRO de la
+   * tarjeta necesita `relative z-10`, o queda debajo de esta capa. */
+  .stretched-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  /* Hairline horizontal "scan" marker used in tech status strips */
+  .o2-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-feature-settings: 'tnum', 'ss01';
+  }
+}
+
+/* ─── Marcas de los vuelos en el explorador (components/ui/EscenaVuelos.js) ───
+ * Una diana de punto de control, el blanco de cuadrantes que se pinta en el
+ * piso para amarrar la fotogrametría, con el nombre del vuelo al lado. Son
+ * elementos del DOM que MapLibre mueve con el mapa, así que el estilo va aquí
+ * y no en clases de Tailwind: la escena solo cambia atributos data-*.
+ * Cuadrantes verde bosque: el vuelo tiene modelo 3D. Ocre: en proceso.
+ * Fuera de @layer para que no dependa de que Tailwind vea las clases. */
+/* La caja de la marca no recibe el puntero, solo la diana: una marca agrupada
+ * (escondida) quedaba encima de la que la agrupa y se tragaba el clic. */
+.marca-vuelo {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  color: #0f5636;
+  pointer-events: none;
+}
+.marca-vuelo[data-modelo='no'] { color: #8f5310; }
+.marca-diana {
+  display: block;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  pointer-events: auto;
+  border-radius: 9999px;
+  filter: drop-shadow(0 1px 2px rgba(13, 31, 21, 0.35));
+  transition: transform 160ms ease, opacity 200ms ease;
+}
+.marca-diana svg { display: block; width: 100%; height: 100%; }
+.marca-aro { fill: #f4f2ea; stroke: #1c3328; stroke-width: 1.5; }
+.marca-cuadrante { fill: currentColor; }
+.marca-vuelo[data-res='si'] .marca-diana,
+.marca-vuelo[data-sel='si'] .marca-diana { transform: scale(1.25); }
+.marca-etiqueta {
+  position: absolute;
+  top: 50%;
+  left: 36px;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  padding: 3px 8px 4px;
+  border-radius: 4px;
+  border: 1px solid rgba(28, 51, 40, 0.18);
+  background: rgba(244, 242, 234, 0.96);
+  color: #1c3328;
+  font: 600 12.5px/1.2 'DM Sans', system-ui, sans-serif;
+  box-shadow: 0 1px 3px rgba(13, 31, 21, 0.18);
+  pointer-events: none;
+  transition: opacity 160ms ease;
+}
+.marca-vuelo[data-etiqueta='izq'] .marca-etiqueta { left: auto; right: 36px; }
+.marca-vuelo[data-etiqueta='oculta'] .marca-etiqueta { opacity: 0; }
+.marca-vuelo[data-res='si'] .marca-etiqueta,
+.marca-vuelo[data-sel='si'] .marca-etiqueta {
+  background: #1c3328;
+  border-color: #1c3328;
+  color: #f4f2ea;
+  opacity: 1;
+}
+/* Al final y con la clase de cada hijo, para ganarle al nombre del elegido.
+ * En los hijos y no en .marca-vuelo: MapLibre le pone `opacity` en línea al
+ * elemento del marcador (lo atenúa cuando el terreno lo tapa) y ganaría. */
+/* Varios vuelos en una marca (a menos de 30 px en pantalla): una diana
+ * detrás de otra y el número arriba. El nombre dice "4 vuelos". */
+.marca-vuelo[data-grupo='si'] .marca-diana {
+  box-shadow: 4px -4px 0 -1.5px #f4f2ea, 4px -4px 0 0 #1c3328;
+}
+.marca-cuenta {
+  position: absolute;
+  top: -9px;
+  right: -11px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9999px;
+  background: #1c3328;
+  color: #f4f2ea;
+  font: 700 11px/18px 'DM Sans', system-ui, sans-serif;
+  text-align: center;
+  pointer-events: none;
+}
+.marca-vuelo:not([data-grupo='si']) > .marca-cuenta { display: none; }
+/* El modelo del vuelo está bajando: un aro que gira alrededor de la diana. Sin
+ * movimiento, el aro queda quieto y punteado. */
+.marca-diana { position: relative; }
+.marca-vuelo[data-cargando='si'] .marca-diana::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  border-top-color: #0f5636;
+  border-right-color: #0f5636;
+  animation: marca-gira 900ms linear infinite;
+}
+@keyframes marca-gira { to { transform: rotate(360deg); } }
+.marca-vuelo[data-oculta='si'] > .marca-diana,
+.marca-vuelo[data-oculta='si'] > .marca-etiqueta,
+.marca-vuelo[data-agrupada='si'] > .marca-diana,
+.marca-vuelo[data-agrupada='si'] > .marca-etiqueta,
+.marca-vuelo[data-agrupada='si'] > .marca-cuenta,
+.marca-vuelo[data-etiqueta='fuera'] > .marca-etiqueta { opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) {
+  .marca-diana, .marca-etiqueta { transition: none; }
+  .marca-vuelo[data-cargando='si'] .marca-diana::after {
+    animation: none;
+    border: 2px dotted #0f5636;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Humedal El Burro",
+  "lugar": "Humedal El Burro",
+  "municipio": "Bogotá (Kennedy)",
+  "fecha": null,
+  "lat": 4.64125,
+  "lon": -74.15,
+  "coordenadas_aprox": false,
+  "dron": null,
+  "camara": null,
+  "fotos": null,
+  "altura_m": null,
+  "captura": "nadir y oblicuas",
+  "gsd_cm": null,
+  "descripcion": "El humedal El Burro y su borde urbano en Kennedy: el espejo de agua, los senderos y los conjuntos que lo rodean.",
+  "estado": "publicado",
+  "miniatura": "/images/vuelos/humedal-el-burro.jpg",
+  "licencia": "CC BY 4.0",
+  "modelo": {
+    "tipo": "3dtiles",
+    "tileset": "",
+    "peso_inicial_mb": null,
+    "tileset_geo": "humedal-el-burro/v1/geo/tileset.json"
+  },
+  "escena": {
+    "geoide_m": 21.05,
+    "suelo_borde_m": 2545.3,
+    "ajuste_altura_m": -205.78,
+    "inclinacion": {
+      "este": -0.01027,
+      "norte": 0.00111,
+      "z_pivote": -3.3
+    },
+    "peso_inicial_mb": 0.72
+  }
+}

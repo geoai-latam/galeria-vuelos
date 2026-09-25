@@ -1,0 +1,36 @@
+{
+  "title": "Biblioteca Virgilio Barco",
+  "lugar": "Biblioteca Virgilio Barco",
+  "municipio": "Bogotá (Teusaquillo)",
+  "fecha": "2026-06-04",
+  "lat": 4.65627,
+  "lon": -74.08921,
+  "coordenadas_aprox": false,
+  "dron": null,
+  "camara": null,
+  "fotos": null,
+  "altura_m": null,
+  "captura": null,
+  "gsd_cm": null,
+  "descripcion": "La Biblioteca Virgilio Barco y el parque que la rodea, en Teusaquillo.",
+  "estado": "publicado",
+  "modelo": {
+    "tipo": "3dtiles",
+    "tileset": "",
+    "peso_inicial_mb": null,
+    "tileset_geo": "parque/v1/geo/tileset.json"
+  },
+  "miniatura": "/images/vuelos/biblioteca-virgilio-barco.jpg",
+  "licencia": "CC BY 4.0",
+  "escena": {
+    "geoide_m": 21.39,
+    "suelo_borde_m": 2553.6,
+    "ajuste_altura_m": -67.91,
+    "inclinacion": {
+      "este": 0.00896,
+      "norte": 0.03211,
+      "z_pivote": -9.5
+    },
+    "peso_inicial_mb": 0.22
+  }
+}

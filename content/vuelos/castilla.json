@@ -1,0 +1,36 @@
+{
+  "title": "Castilla",
+  "lugar": "Castilla",
+  "municipio": "Bogotá (Kennedy)",
+  "fecha": "2026-06-07",
+  "lat": 4.6447,
+  "lon": -74.13524,
+  "coordenadas_aprox": false,
+  "dron": null,
+  "camara": null,
+  "fotos": 1174,
+  "altura_m": 54,
+  "captura": "nadir y oblicuas",
+  "gsd_cm": 0.95,
+  "descripcion": "Un sector del barrio Castilla con 370 fotos nadir a 54 m y 804 oblicuas.",
+  "estado": "publicado",
+  "modelo": {
+    "tipo": "3dtiles",
+    "tileset": "",
+    "peso_inicial_mb": null,
+    "tileset_geo": "castilla/v1/geo/tileset.json"
+  },
+  "miniatura": "/images/vuelos/castilla.jpg",
+  "licencia": "CC BY 4.0",
+  "escena": {
+    "geoide_m": 21.13,
+    "suelo_borde_m": 2546.6,
+    "ajuste_altura_m": -31.22,
+    "inclinacion": {
+      "este": 0.01031,
+      "norte": -0.02214,
+      "z_pivote": -3.5
+    },
+    "peso_inicial_mb": 0.36
+  }
+}

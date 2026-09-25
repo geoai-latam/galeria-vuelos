@@ -1,0 +1,35 @@
+{
+  "name": "galeria-vuelos",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "predev": "node scripts/copiar-maplibre.js",
+    "dev": "next dev",
+    "prebuild": "node scripts/copiar-maplibre.js",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "validar": "node scripts/validar-tarjetas.js"
+  },
+  "dependencies": {
+    "3d-tiles-renderer": "^0.5.3",
+    "fflate": "^0.8.3",
+    "lucide-react": "^0.577.0",
+    "maplibre-gl": "^6.11.2",
+    "next": "^16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.12",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0"
+  }
+}

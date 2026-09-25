@@ -1,0 +1,1 @@
+{"rules":[{"allowed":{"origins":["https://galeria-vuelos.vercel.app","https://geoai-latam.inspow.tech","http://localhost:3000","http://localhost:3111"],"methods":["GET","HEAD"],"headers":["Range"]},"exposeHeaders":["Content-Length","ETag","Content-Range"],"maxAgeSeconds":86400}]}

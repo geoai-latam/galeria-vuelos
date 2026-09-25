@@ -1,0 +1,10 @@
+{
+  "name": "vuelos-teselas",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prueba": "node prueba/prueba.mjs",
+    "dev": "npx wrangler@4 dev",
+    "deploy": "npx wrangler@4 deploy"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Ibagué, Arboleda del Campestre",
+  "lugar": "Arboleda del Campestre",
+  "municipio": "Ibagué (Tolima)",
+  "fecha": null,
+  "lat": 4.39112,
+  "lon": -75.14188,
+  "coordenadas_aprox": false,
+  "dron": null,
+  "camara": null,
+  "fotos": null,
+  "altura_m": null,
+  "captura": "oblicuas",
+  "gsd_cm": null,
+  "descripcion": "Un sector de Arboleda del Campestre, en Ibagué, levantado con fotos oblicuas.",
+  "estado": "publicado",
+  "miniatura": "/images/vuelos/ibague-arboleda.jpg",
+  "licencia": "CC BY 4.0",
+  "modelo": {
+    "tipo": "3dtiles",
+    "tileset": "",
+    "peso_inicial_mb": null,
+    "tileset_geo": "ibague-arboleda/v1/geo/tileset.json"
+  },
+  "escena": {
+    "geoide_m": 22.19,
+    "suelo_borde_m": 916.9,
+    "ajuste_altura_m": -68.04,
+    "inclinacion": {
+      "este": 0.01744,
+      "norte": 0.01933,
+      "z_pivote": -3.9
+    },
+    "peso_inicial_mb": 0.09
+  }
+}

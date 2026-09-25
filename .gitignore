@@ -1,0 +1,38 @@
+# Dependencias
+node_modules/
+
+# Salida de Next.js
+.next/
+out/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Variables de entorno (ninguna es necesaria para correr la app)
+.env*
+!.env*.example
+
+# Vercel
+.vercel
+
+# Editores y sistema
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Worker de MapLibre: lo copia scripts/copiar-maplibre.js en predev y prebuild,
+# siempre de la versión instalada.
+public/maplibre/
+
+# Tubería: nada de datos, teselas, entornos ni dependencias
+tuberia/**/node_modules/
+tuberia/**/.wrangler/
+tuberia/**/*.bak
+tuberia/venv/

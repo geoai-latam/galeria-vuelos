@@ -1,0 +1,5 @@
+# Finales de línea LF en el repo, sea cual sea el sistema de quien clona.
+* text=auto eol=lf
+*.jpg binary
+*.png binary
+*.wasm binary

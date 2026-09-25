@@ -1,0 +1,32 @@
+{
+  "title": "Nombre corto del vuelo",
+  "lugar": "Qué se voló: un parque, un barrio, un edificio",
+  "municipio": "Bogotá (Kennedy)",
+  "fecha": "2026-01-31",
+  "lat": 4.649,
+  "lon": -74.157,
+  "coordenadas_aprox": false,
+  "dron": null,
+  "camara": null,
+  "fotos": null,
+  "altura_m": null,
+  "captura": "nadir",
+  "gsd_cm": null,
+  "descripcion": "Una o dos frases: qué se voló y cómo.",
+  "estado": "en proceso",
+  "modelo": {
+    "tipo": "3dtiles",
+    "tileset": "",
+    "peso_inicial_mb": null,
+    "zUp": false,
+    "tileset_geo": ""
+  },
+  "escena": {
+    "geoide_m": null,
+    "ajuste_altura_m": 0,
+    "camara": null,
+    "peso_inicial_mb": null
+  },
+  "miniatura": "",
+  "licencia": "CC BY 4.0"
+}

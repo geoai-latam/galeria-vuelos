@@ -1,0 +1,31 @@
+{
+  "title": "Rotonda, Kennedy",
+  "lugar": "Rotonda al sur de la Biblioteca El Tintal",
+  "municipio": "Bogotá (Kennedy)",
+  "fecha": null,
+  "lat": 4.64054,
+  "lon": -74.15632,
+  "coordenadas_aprox": false,
+  "dron": null,
+  "camara": null,
+  "fotos": null,
+  "altura_m": null,
+  "captura": "nadir y oblicuas",
+  "gsd_cm": null,
+  "descripcion": "La rotonda y las manzanas al sur de la Biblioteca El Tintal, con fotos nadir y oblicuas.",
+  "estado": "publicado",
+  "miniatura": "/images/vuelos/rotonda-kennedy.jpg",
+  "licencia": "CC BY 4.0",
+  "modelo": {
+    "tipo": "3dtiles",
+    "tileset": "",
+    "peso_inicial_mb": null,
+    "tileset_geo": "rotonda-kennedy/v1/geo/tileset.json"
+  },
+  "escena": {
+    "geoide_m": 21.02,
+    "suelo_borde_m": 2543.5,
+    "ajuste_altura_m": -20.06,
+    "peso_inicial_mb": 0.57
+  }
+}

@@ -1,0 +1,16 @@
+# Worker de las teselas de los vuelos. NO está desplegado: desplegarlo toca la
+# cuenta de Cloudflare y lo aprueba Sebastián (ver README.md).
+name = "vuelos-teselas"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# El bucket donde ya están los modelos (<slug>/v<N>/geo y /local).
+[[r2_buckets]]
+binding = "TESELAS"
+bucket_name = "vuelos"
+
+# Con *.workers.dev ya hay HTTP/2 y HTTP/3, pero la Cache API no guarda nada.
+# Para la caché en el borde, un dominio propio en una zona de Cloudflare
+# (inspow.tech hoy está en Route 53 de AWS, así que no sirve tal cual):
+# routes = [{ pattern = "teselas.<dominio-en-cloudflare>", custom_domain = true }]
+workers_dev = true

@@ -1,0 +1,36 @@
+{
+  "title": "Zipaquirá",
+  "lugar": "Zipaquirá",
+  "municipio": "Zipaquirá (Cundinamarca)",
+  "fecha": "2026-08-02",
+  "lat": 5.02361,
+  "lon": -74.00393,
+  "coordenadas_aprox": false,
+  "dron": null,
+  "camara": null,
+  "fotos": 989,
+  "altura_m": 45,
+  "captura": "nadir y oblicuas",
+  "gsd_cm": null,
+  "descripcion": "989 fotos nadir y oblicuas a 45 m de altura sobre Zipaquirá.",
+  "estado": "publicado",
+  "modelo": {
+    "tipo": "3dtiles",
+    "tileset": "",
+    "peso_inicial_mb": null,
+    "tileset_geo": "zipaquira/v1/geo/tileset.json"
+  },
+  "miniatura": "/images/vuelos/zipaquira.jpg",
+  "licencia": "CC BY 4.0",
+  "escena": {
+    "geoide_m": 21.59,
+    "suelo_borde_m": 2612.2,
+    "ajuste_altura_m": -158.25,
+    "inclinacion": {
+      "este": 0.00835,
+      "norte": -0.01175,
+      "z_pivote": -15.6
+    },
+    "peso_inicial_mb": 0.22
+  }
+}

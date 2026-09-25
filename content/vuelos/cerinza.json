@@ -1,0 +1,36 @@
+{
+  "title": "Cerinza",
+  "lugar": "Casco urbano de Cerinza",
+  "municipio": "Cerinza (Boyacá)",
+  "fecha": null,
+  "lat": 5.95624,
+  "lon": -72.94779,
+  "coordenadas_aprox": false,
+  "dron": null,
+  "camara": null,
+  "fotos": null,
+  "altura_m": null,
+  "captura": "nadir y oblicuas",
+  "gsd_cm": null,
+  "descripcion": "El casco urbano de Cerinza, en Boyacá, con fotos nadir y oblicuas fusionadas en un solo modelo.",
+  "estado": "publicado",
+  "miniatura": "/images/vuelos/cerinza.jpg",
+  "licencia": "CC BY 4.0",
+  "modelo": {
+    "tipo": "3dtiles",
+    "tileset": "",
+    "peso_inicial_mb": null,
+    "tileset_geo": "cerinza/v1/geo/tileset.json"
+  },
+  "escena": {
+    "geoide_m": 20.02,
+    "suelo_borde_m": 2719.4,
+    "ajuste_altura_m": -255.67,
+    "inclinacion": {
+      "este": -0.06652,
+      "norte": 0.01528,
+      "z_pivote": -6
+    },
+    "peso_inicial_mb": 0.29
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Biblioteca El Tintal",
+  "lugar": "Biblioteca El Tintal",
+  "municipio": "Bogotá (Kennedy)",
+  "fecha": "2026-01-31",
+  "lat": 4.649,
+  "lon": -74.157,
+  "coordenadas_aprox": false,
+  "dron": "DJI Mini 5 Pro",
+  "camara": "DJI FC9313 (50 MP)",
+  "fotos": 2440,
+  "altura_m": null,
+  "captura": "nadir y oblicuas",
+  "gsd_cm": null,
+  "descripcion": "La biblioteca y su entorno, con fotos nadir y oblicuas tomadas en un vuelo perimetral. Es el mismo levantamiento que mostré en el post del visor de PhotoMesh.",
+  "estado": "publicado",
+  "modelo": {
+    "tipo": "3dtiles",
+    "tileset": "",
+    "peso_inicial_mb": null,
+    "tileset_geo": "tintal/v2/geo/tileset.json"
+  },
+  "miniatura": "/images/vuelos/tintal.jpg",
+  "licencia": "CC BY 4.0",
+  "escena": {
+    "geoide_m": 21.02,
+    "suelo_borde_m": 2541.2,
+    "ajuste_altura_m": -67.79,
+    "inclinacion": {
+      "este": -0.02246,
+      "norte": 0.02329,
+      "z_pivote": 3.7
+    },
+    "peso_inicial_mb": 0.59
+  }
+}
