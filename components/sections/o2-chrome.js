@@ -2,7 +2,7 @@
 //
 // La galería es un producto de GeoAI LATAM en su propio dominio: el nav no
 // enlaza secciones del sitio que no existen acá (blog, proyectos, roadmap,
-// boletín), solo el explorador y la vuelta a geoai-latam.inspow.tech.
+// boletín), solo el explorador y la vuelta a geoailatam.terrnova.com.
 
 import Link from 'next/link'
 import Image from 'next/image'
