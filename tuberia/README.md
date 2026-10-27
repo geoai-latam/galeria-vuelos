@@ -87,7 +87,8 @@ decodificador de meshoptimizer 1.1 (MIT, Arseny Kapoulkine), para comparar.
 ## R2
 
 - `cors-vuelos.json`: la regla CORS del bucket. Acepta la galería
-  (`galeria-vuelos.vercel.app`), `geoai-latam.inspow.tech` y localhost. La regla
+  (`vuelos.geoailatam.terrnova.com` y el viejo `galeria-vuelos.vercel.app`), el
+  sitio (`geoailatam.terrnova.com` y el viejo `geoai-latam.inspow.tech`) y localhost. La regla
   que manda es la del panel de Cloudflare: si se cambia allá, se actualiza acá.
 - `worker-vuelos/`: un Worker de Cloudflare para servir el bucket con HTTP/2 y
   caché larga. **No está desplegado** (pendiente 4). Su lista de orígenes

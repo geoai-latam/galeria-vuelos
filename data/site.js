@@ -1,5 +1,5 @@
 // Configuración de la galería. Es un producto de GeoAI LATAM, pero vive en su
-// propio dominio: nada de acá afirma ser geoai-latam.inspow.tech.
+// propio dominio: nada de acá afirma ser geoailatam.terrnova.com.
 
 // URL pública de esta app, sin la barra final. De acá salen el canonical, el
 // og:url, las og:image absolutas, el sitemap y el robots.txt.
@@ -20,7 +20,7 @@ export const siteConfig = {
     'Los vuelos de fotogrametría con dron de Sebastián Forero en Bogotá, Cundinamarca, Boyacá y Tolima, en un mapa 3D con el modelo de cada uno.',
   url: SITE_URL,
   // El sitio de la comunidad: el nav y el pie llevan de vuelta allá.
-  geoai: 'https://geoai-latam.inspow.tech',
+  geoai: 'https://geoailatam.terrnova.com',
   repo: 'https://github.com/geoai-latam/galeria-vuelos',
   autor: 'Sebastián Forero',
 }

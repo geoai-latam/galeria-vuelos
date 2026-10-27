@@ -6,8 +6,9 @@ explorador: todos los vuelos en una escena, con una lista al lado. Cada vuelo
 tiene además su ficha en `/vuelos/<slug>`, y `/?v=<slug>` abre el explorador
 sobre él.
 
-Publicada en **https://galeria-vuelos.vercel.app**. Es un proyecto de
-[GeoAI LATAM](https://geoai-latam.inspow.tech): empezó dentro de ese sitio y
+Publicada en **https://vuelos.geoailatam.terrnova.com** (antes
+`galeria-vuelos.vercel.app`, que redirige con 308). Es un proyecto de
+[GeoAI LATAM](https://geoailatam.terrnova.com): empezó dentro de ese sitio y
 desde el 25 de septiembre de 2026 vive aparte.
 
 ## Stack
@@ -64,8 +65,10 @@ todavía se corren a mano.
    (`tuberia/cors-vuelos.json` guarda la regla vigente). Sin eso se ve el mapa
    pero no los modelos. La de producción, `https://galeria-vuelos.vercel.app`,
    ya está.
-3. Cuando haya dominio propio, definir `NEXT_PUBLIC_SITE_URL` (por ejemplo
-   `https://vuelos.midominio.com`, sin barra final) y agregarlo también al CORS.
+3. El dominio propio es `https://vuelos.geoailatam.terrnova.com` (27-oct-2026):
+   está en `NEXT_PUBLIC_SITE_URL` en Vercel y en el CORS. Hace falta la variable
+   porque `VERCEL_PROJECT_PRODUCTION_URL` toma el dominio más corto, y ese sigue
+   siendo `galeria-vuelos.vercel.app` (que ahora solo redirige).
 
 La ruta vieja `/vuelos` redirige a `/` y conserva el `?v=<slug>`.
 

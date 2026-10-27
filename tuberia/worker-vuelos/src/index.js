@@ -22,6 +22,8 @@ const UN_ANO = 'public, max-age=31536000, immutable'
 const CORTO = 'public, max-age=300'
 
 const ORIGENES = new Set([
+  'https://vuelos.geoailatam.terrnova.com',
+  'https://geoailatam.terrnova.com',
   'https://galeria-vuelos.vercel.app',
   'https://geoai-latam.inspow.tech',
   'http://localhost:3000',
